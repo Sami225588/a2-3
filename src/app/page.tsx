@@ -2,7 +2,20 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      {/* Header */}
+      <header className="bg-blue-500 text-white shadow-lg w-full">
+        <div className="container mx-auto p-4 flex justify-between items-center">
+          <h1 className="text-xl font-bold">Profile Section</h1>
+          <nav className="space-x-6">
+            <a href="/portfolio" className="hover:text-gray-200">Portfolio</a>
+            <a href="/about" className="hover:text-gray-200">About</a>
+            <a href="/contact" className="hover:text-gray-200">Contact Us</a>
+          </nav>
+        </div>
+      </header>
+
+      {/* Main Content */}
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
@@ -22,6 +35,14 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
+
+        {/* Profile Section */}
+        <section className="bg-white shadow-md p-6 rounded-lg">
+          <h2 className="text-2xl font-semibold mb-4">Profile Information</h2>
+          <p><strong>Name:</strong> Sami</p>
+          <p><strong>Age:</strong> 22</p>
+          <p><strong>Experience:</strong> 2 years</p>
+        </section>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
@@ -49,52 +70,12 @@ export default function Home() {
           </a>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer className="bg-blue-500 text-white w-full p-4 mt-auto row-start-3">
+        <div className="container mx-auto text-center">
+          <p>&copy; 2024 My Profile Page. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   );
